@@ -13,6 +13,10 @@ from simple_rl.tasks.gather.GatherMDPClass import GatherMDP
 from simple_rl.tasks.gather.GatherStateClass import GatherState
 from simple_rl.tasks.grid_game.GridGameMDPClass import GridGameMDP
 from simple_rl.tasks.grid_world.GridWorldMDPClass import GridWorldMDP
+from simple_rl.tasks.grid_world_encode.EncodeGridWorldMDPClass import EncodeGridWorldMDP
+from simple_rl.tasks.grid_world_encode.EncodeGridWorldStateClass import EncodeGridWorldState
+from simple_rl.tasks.grid_world_cont.ContGridWorldMDPClass import ContGridWorldMDP
+from simple_rl.tasks.grid_world_cont.ContGridWorldStateClass import ContGridWorldState
 from simple_rl.tasks.grid_world.GridWorldStateClass import GridWorldState
 from simple_rl.tasks.hanoi.HanoiMDPClass import HanoiMDP
 from simple_rl.tasks.navigation.NavigationWorldMDP import NavigationWorldMDP

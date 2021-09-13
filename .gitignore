@@ -2,6 +2,8 @@
 results/
 build/
 dist/
+models/
+plots/
 todo.txt
 update.py
 *.egg-info

@@ -267,7 +267,7 @@ def plot(results, experiment_dir, agents, plot_file_name="", conf_intervals=[], 
     else:
         exp_name = exp_dir_split_list[0]
     experiment_dir = os.path.join(experiment_dir, "")
-    plot_file_name = os.path.join(experiment_dir, plot_file_name + ".pdf") if plot_file_name != "" else experiment_dir + plot_label.lower() + "_" + unit.lower() + ".pdf"
+    plot_file_name = os.path.join(experiment_dir, plot_file_name + ".png") if plot_file_name != "" else experiment_dir + plot_label.lower() + "_" + unit.lower() + ".png"
     plot_title = CUSTOM_TITLE if CUSTOM_TITLE is not None else plot_label + " " + disc_ext + unit + ": " + exp_name
     if CUSTOM_TITLE is None:
         plot_title = _format_title(plot_title)
@@ -294,7 +294,7 @@ def plot(results, experiment_dir, agents, plot_file_name="", conf_intervals=[], 
     pyplot.tight_layout() # Keeps the spacing nice.
 
     # Save the plot.
-    pyplot.savefig(plot_file_name, format="pdf")
+    pyplot.savefig(plot_file_name, format="png")
     
     if open_plot:
         if (os.name == 'nt'):

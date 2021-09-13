@@ -345,7 +345,10 @@ def run_single_agent_on_mdp(agent, mdp, episodes, steps, experiment=None, verbos
             step_start = time.time()
 
             # Compute the agent's policy.
-            action = agent.act(state, reward)
+            if verbose and type(agent) in [LinearQLearningAgent, DeepQLearningAgent]:
+                action = agent.act(state, reward, verbose=(step==steps))
+            else:
+                action = agent.act(state, reward)
 
             # Terminal check.
             if state.is_terminal():
@@ -374,6 +377,7 @@ def run_single_agent_on_mdp(agent, mdp, episodes, steps, experiment=None, verbos
 
             if next_state.is_terminal():
                 if reset_at_terminal:
+                    agent.act(next_state, reward) # hacky: update using the next state
                     # Reset the MDP.
                     next_state = mdp.get_init_state()
                     mdp.reset()
@@ -383,6 +387,8 @@ def run_single_agent_on_mdp(agent, mdp, episodes, steps, experiment=None, verbos
 
             # Update pointer.
             state = next_state
+        if verbose:
+            print("\tLast episode reward:", cumulative_episodic_reward)
 
         # Process experiment info at end of episode.
         if experiment is not None:

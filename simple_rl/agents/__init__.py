@@ -13,6 +13,8 @@ Implementations of standard RL agents:
 from simple_rl.agents.AgentClass import Agent
 from simple_rl.agents.FixedPolicyAgentClass import FixedPolicyAgent
 from simple_rl.agents.QLearningAgentClass import QLearningAgent
+from simple_rl.agents.LinearQLearningAgentClass import LinearQLearningAgent
+from simple_rl.agents.DeepQLearningAgentClass import DeepQLearningAgent
 from simple_rl.agents.DoubleQAgentClass import DoubleQAgent
 from simple_rl.agents.DelayedQAgentClass import DelayedQAgent
 from simple_rl.agents.PolicyGradientAgentClass import PolicyGradientAgent

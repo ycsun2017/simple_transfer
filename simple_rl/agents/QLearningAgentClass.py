@@ -82,6 +82,7 @@ class QLearningAgent(Agent):
             and performs updates given (s=self.prev_state,
             a=self.prev_action, r=reward, s'=state)
         '''
+        print(state)
         if learning:
             self.update(self.prev_state, self.prev_action, reward, state)
         if self.explore == "softmax":
